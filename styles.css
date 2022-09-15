@@ -1,0 +1,45 @@
+*{
+    font-family: 'M PLUS 1', sans-serif;
+}
+
+body{
+    
+}
+
+#header-box{
+    margin-top: 40px;
+    background: -webkit-linear-gradient(-20deg, #616161 0%, #9bc5c3 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+#header-time{
+    font-size:120px;
+}
+
+#player-box{
+    background-color: blue;
+    height: 85px;
+    width: 609px;
+    border-radius: 20px;
+    margin-top: 80px;
+}
+
+#widget-box{
+    margin-top: 45px;
+}
+
+#widget{
+    background-color: red;
+    height: 150px;
+    width: 150px;
+    border-radius: 20px;
+}
+
+.widget-left{
+    margin-right: 50px;
+}
+
+.widget-bottom{
+    margin-top: 50px;
+}
