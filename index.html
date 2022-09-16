@@ -10,49 +10,138 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=M+PLUS+1:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/78a4d9e669.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="styles.css">
     <title>Document</title>
 </head>
 <body>
     <div class="container">
         <div class="row">
-            <div class="col-6 justify-content-center">
+            <div class="col-7 justify-content-center">
                 <div id="header-box" class="row">
                     <h4 class="row justify-content-center">Quinta-feira, 15 de setembro</h4>
                     <h1 id="header-time" class="g-gradient row justify-content-center">10:34</h1>
                     
                 </div>
                 <div class="row justify-content-center">
-                    <div id="player-box">
+                    <div id="player-box" class="d-flex flex-row justify-content-around">
+                        <div class="album-art align-self-center">
+
+                        </div>
+                        <div class="track-info align-self-center">
+                            <p>Running Up That Hill(A Deal With God)</p>
+                            <p class="text-center">Kate Bush</p>
+                            <p class="text-center">Hounds Of Love</p>
+                        </div>
+                        <div class="player-controls align-self-center d-flex flex-row">
+                            <i class="fa-solid fa-backward"></i>
+                            <i class="fa-solid fa-pause"></i>
+                            <i class="fa-solid fa-forward"></i>
+                        </div>
+                    </div>
+                </div>
+                <div id="widget-box" class="row justify-content-between">
+                    <div class="widget-row">
+                        <div class="widget-group d-flex flex-column align-items-center">     
+                            <div class="widget-sm">
+                                <i class="fa-regular fa-lightbulb icon-gradient"></i>
+                            </div>
+                            <p>Acender/Apagar luzes - Garagem</p>
+                        </div>  
+                        <div class="widget-group">
+                            <div class="widget-sm">
+                                <i class="fa-solid fa-warehouse icon-gradient"></i>
+                            </div>
+                            <p>Abrir/Fechar - Garagem</p>
+                        </div>
+                        <div class="widget-group">
+                            <div class="widget-sm">
+                                <i class="fa-solid fa-gas-pump icon-gradient"></i>
+                            </div>
+                            <p>Histórico de Abastecimento</p>
+                        </div>
+                    </div>
+                    <div class="widget-row">
+                        <div class="widget-group">
+                            <div class="widget-sm">
+                                <i class="fa-solid fa-location-arrow icon-gradient"></i>
+                            </div>
+                            <p>GPS</p>
+                        </div>
+                        <div class="widget-group">
+                            <div class="widget-sm">
+                                <i class="fa-solid fa-toolbox icon-gradient"></i>
+                            </div>
+                            <p>Manual Eletrônico</p>
+                        </div>
+                        <div class="widget-group">
+                            <div class="widget-sm">
+                                <i class="fa-solid fa-question icon-gradient"></i>
+                            </div>
+                            <p>?</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div id="widget-column" class="col-5">
+                <div class="widget-group">
+                    <div class="widget-m">
+                        <div class="icons-widget col-3">
+                            <i class="fa-solid fa-snowflake"></i>
+                            <button id="botaoAc" onclick="estadoAC()"><i class="fa-solid fa-power-off icon-ac"></i></button>
+                        </div>
+                        <p id="temperaturaAc" class="align-self-center">19°</p>
+                        <div class="buttons-ac">
+                            <button id="aumentarAc" onclick="aumentarAC()"><i class="fa-solid fa-circle-plus"></i></button>
+                        <button id="diminuirAc"><i class="fa-solid fa-circle-minus"></i></button>
+                        </div>
+                    </div>
+                    <p id="acEstado">A/C Desligado</p>
+                </div>
+                <div class="widget-group">
+                    <div class="row widget-m">
 
                     </div>
                 </div>
-                <div id="widget-box" class="row justify-content-center">
-                    <div id="widget" class="widget-left widget-top">
+                <div class="widget-group">
+                    <div class="row widget-m">
 
                     </div>
-                    <div id="widget" class="widget-left widget-right widget-top">
-
-                    </div>
-                    <div id="widget" class="widget-right widget-top">
-
-                    </div>
-                    <div id="widget" class="widget-left widget-bottom">
-
-                    </div>
-                    <div id="widget" class="widget-left widget-right widget-bottom">
-
-                    </div>
-                    <div id="widget" class="widget-right widget-bottom">
+                </div>
+                <div class="widget-group">
+                    <div class="row widget-m">
 
                     </div>
                 </div>
             </div>
-                
         </div>
     </div>
     
     <!-- JavaScript Bundle with Popper -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-u1OknCvxWvY5kfmNBILK2hRnQC3Pr17a+RTT6rIHI7NnikvbZlHgTPOOmMi466C8" crossorigin="anonymous"></script>
+
+    <script>
+        function estadoAC (){
+            const icone = document.querySelector('.icon-ac');
+            const estado = document.querySelector('#acEstado');
+
+            if(icone.style.color == 'red'){
+                icone.style.color = 'blue';
+                estado.innerHTML = "A/C Ligado";
+            }
+            else{
+                icone.style.color = 'red';
+                estado.innerHTML = "A/C Desligado";
+            }
+        }
+
+        function aumentarAC (){
+            const aumentar = document.querySelector('#aumentarAc');
+            const temperatura = document.querySelector('#temperaturaAc');
+
+            temperatura.innerHTML = temperatura + 1;
+
+        }
+    </script>
 </body>
 </html>
