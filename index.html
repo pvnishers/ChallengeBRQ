@@ -15,10 +15,17 @@
     <title>Document</title>
 </head>
 <body>
-    <div class="container">
+    <div class="d-flex flex-row barra-topo">
+        <p id="mode">Modo Claro</p>
+        <button class="" onclick="modoEscuro()">
+            <i class="fa-solid fa-toggle-off modoClaro modos"></i>
+            <i class="fa-solid fa-toggle-on hide modoEscuro modos" style="color:white"></i>
+        </button>
+    </div>
+    <div class="container">       
         <div class="row">
             <div class="col-7 justify-content-center">
-                <div id="header-box" class="row">
+                <div id="header-box" class="header-box row">
                     <h4 class="row justify-content-center">Quinta-feira, 15 de setembro</h4>
                     <h1 id="header-time" class="g-gradient row justify-content-center">10:34</h1>
                     
@@ -43,15 +50,19 @@
                 <div id="widget-box" class="row justify-content-between">
                     <div class="widget-row">
                         <div class="widget-group d-flex flex-column align-items-center">     
-                            <div class="widget-sm">
-                                <i class="fa-regular fa-lightbulb icon-gradient"></i>
-                            </div>
+                            <button onclick="acenderLuz()">
+                                <div class="widget-sm">
+                                    <i id="luz" class="fa-regular fa-lightbulb icon-gradient"></i>
+                                </div>
+                            </button>
                             <p>Acender/Apagar luzes - Garagem</p>
                         </div>  
                         <div class="widget-group">
-                            <div class="widget-sm">
-                                <i class="fa-solid fa-warehouse icon-gradient"></i>
-                            </div>
+                            <button onclick="abrirGaragem()">
+                                <div class="widget-sm">
+                                    <i id="garagem" class="fa-solid fa-warehouse icon-gradient"></i>
+                                </div>
+                            </button>
                             <p>Abrir/Fechar - Garagem</p>
                         </div>
                         <div class="widget-group">
@@ -90,10 +101,11 @@
                             <i class="fa-solid fa-snowflake"></i>
                             <button id="botaoAc" onclick="estadoAC()"><i class="fa-solid fa-power-off icon-ac"></i></button>
                         </div>
+                        <input type="number" id="nmrAc" value="19" style="display:none;"/>
                         <p id="temperaturaAc" class="align-self-center">19°</p>
                         <div class="buttons-ac">
                             <button id="aumentarAc" onclick="aumentarAC()"><i class="fa-solid fa-circle-plus"></i></button>
-                        <button id="diminuirAc"><i class="fa-solid fa-circle-minus"></i></button>
+                        <button id="diminuirAc" onclick="diminuirAC()"><i class="fa-solid fa-circle-minus"></i></button>
                         </div>
                     </div>
                     <p id="acEstado">A/C Desligado</p>
@@ -120,28 +132,90 @@
     <!-- JavaScript Bundle with Popper -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-u1OknCvxWvY5kfmNBILK2hRnQC3Pr17a+RTT6rIHI7NnikvbZlHgTPOOmMi466C8" crossorigin="anonymous"></script>
 
+    <script src="https://code.jquery.com/jquery-3.6.1.min.js"></script>
     <script>
-        function estadoAC (){
-            const icone = document.querySelector('.icon-ac');
-            const estado = document.querySelector('#acEstado');
+        function estadoAC(){
+            let icone = document.querySelector('.icon-ac');
+            let estado = document.querySelector('#acEstado');
+
+        
 
             if(icone.style.color == 'red'){
                 icone.style.color = 'blue';
                 estado.innerHTML = "A/C Ligado";
             }
+
             else{
                 icone.style.color = 'red';
                 estado.innerHTML = "A/C Desligado";
             }
         }
 
-        function aumentarAC (){
-            const aumentar = document.querySelector('#aumentarAc');
-            const temperatura = document.querySelector('#temperaturaAc');
+        function aumentarAC(){
+            let nmr = document.getElementById('nmrAc').value;
+            const temp = document.getElementById('temperaturaAc');
+            if(nmr < 25){
+                nmr++;
+                document.getElementById('nmrAc').value = nmr;
+                temp.innerHTML = nmr + '°';
+            }
+        }
 
-            temperatura.innerHTML = temperatura + 1;
+        function diminuirAC(){
+            let nmr = document.getElementById('nmrAc').value;
+            const temp = document.getElementById('temperaturaAc');
+            if(nmr > 14){
+                nmr--;
+                document.getElementById('nmrAc').value = nmr;
+                temp.innerHTML = nmr + '°';
+            }
+        }
+
+        function acenderLuz(){
+            const luz = document.getElementById('luz');
+
+            luz.classList.toggle('icon-active');
 
         }
+
+        function abrirGaragem(){
+            const garagem = document.getElementById('garagem');
+
+            garagem.classList.toggle('icon-active');
+
+        }
+
+        function modoEscuro(){
+            const fundo = document.querySelector('body');
+            const header = document.getElementById('header-box');
+            const botaoClaro = document.querySelector('.modoClaro'); 
+            const botaoEscuro = document.querySelector('.modoEscuro');
+            const mode = document.querySelector('#mode');
+            
+
+            if(botaoClaro.classList.contains('hide')){
+                botaoEscuro.classList.toggle('hide');
+                botaoClaro.classList.remove('hide');
+                fundo.classList.remove('dark-mode');
+                header.classList.remove('dark-mode-header');                
+                $('.widget-sm').toggleClass('widget-dark');          
+                $('.widget-m').toggleClass('widget-dark');
+                mode.innerHTML = 'Modo Claro';
+            }
+
+            else{               
+                botaoEscuro.classList.remove('hide');
+                $('.modoClaro').classList.toggle('hide');
+                fundo.classList.toggle('dark-mode');
+                header.classList.toggle('dark-mode-header');
+                $('.widget-sm').toggleClass('widget-dark');
+                $('.widget-m').toggleClass('widget-dark');
+                mode.innerHTML = 'Modo Escuro';
+            }
+        }
+        
+
+      
     </script>
 </body>
 </html>
