@@ -91,7 +91,7 @@ body{
     display: flex;
     flex-direction: row;
     justify-content: space-around;
-    margin-top: 34px;
+    margin-top: 39.5px;
 }
 
 .widget-m{
@@ -107,6 +107,7 @@ body{
     -webkit-box-shadow: 6px 6px 23px -6px rgba(0,0,0,0.41);
     -moz-box-shadow: 6px 6px 23px -6px rgba(0,0,0,0.41);
     box-shadow: 6px 6px 23px -6px rgba(0,0,0,0.41);
+    
     
 
 }
@@ -200,4 +201,9 @@ button{
     background: none;
     width: min-content;
     height: min-content;
+}
+
+.popup{
+    background-color: white;
+    display: none;
 }

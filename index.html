@@ -26,8 +26,8 @@
         <div class="row">
             <div class="col-7 justify-content-center">
                 <div id="header-box" class="header-box row">
-                    <h4 class="row justify-content-center">Quinta-feira, 15 de setembro</h4>
-                    <h1 id="header-time" class="g-gradient row justify-content-center">10:34</h1>
+                    <h4 id="header-day" class="row justify-content-center"></h4>
+                    <h1 id="header-time" class="g-gradient row justify-content-center"></h1>
                     
                 </div>
                 <div class="row justify-content-center">
@@ -87,9 +87,16 @@
                         </div>
                         <div class="widget-group">
                             <div class="widget-sm">
-                                <i class="fa-solid fa-question icon-gradient"></i>
+                                <i class="fa-brands fa-sistrix"></i>
                             </div>
                             <p>?</p>
+                        </div>
+                        <div class="popup">
+                            <ul>
+                                <li>Rota para hospital mais próximo</li>
+                                <li>SOS</li>
+                                <li>Rota para posto de abastecimento mais próximo</li>
+                            </ul>
                         </div>
                     </div>
                 </div>
@@ -112,18 +119,21 @@
                 </div>
                 <div class="widget-group">
                     <div class="row widget-m">
-
+                        
                     </div>
+                    
                 </div>
                 <div class="widget-group">
                     <div class="row widget-m">
 
                     </div>
+                    
                 </div>
                 <div class="widget-group">
                     <div class="row widget-m">
 
                     </div>
+                    
                 </div>
             </div>
         </div>
@@ -194,8 +204,8 @@
             
 
             if(botaoClaro.classList.contains('hide')){
-                botaoEscuro.classList.toggle('hide');
-                botaoClaro.classList.remove('hide');
+                $('.modoEscuro').toggleClass('hide');
+                $('.modoClaro').toggleClass('hide');
                 fundo.classList.remove('dark-mode');
                 header.classList.remove('dark-mode-header');                
                 $('.widget-sm').toggleClass('widget-dark');          
@@ -204,18 +214,32 @@
             }
 
             else{               
-                botaoEscuro.classList.remove('hide');
-                $('.modoClaro').classList.toggle('hide');
-                fundo.classList.toggle('dark-mode');
+                $('.modoEscuro').toggleClass('hide');
+                $('.modoClaro').toggleClass('hide');
+                $('body').toggleClass('dark-mode');
                 header.classList.toggle('dark-mode-header');
                 $('.widget-sm').toggleClass('widget-dark');
                 $('.widget-m').toggleClass('widget-dark');
                 mode.innerHTML = 'Modo Escuro';
             }
         }
-        
 
-      
+        function getTime(){
+            let today = new Date();
+        const mes = ["Janeiro", "Fevereiro", "Março", "Abril", "Maio", "Junho", "Julho", "Agosto", "Setembro", "Outubro", "Novembro", "Dezembro"];
+            let day = today.getDate() + " de " + (mes[today.getMonth()]) + " de " + today.getFullYear();
+            let time = today.getHours() + ":" + today.getMinutes();
+            const hora = document.querySelector('#header-time');
+            const dia = document.querySelector('#header-day');
+            const semana = ["Domingo", "Segunda-feira", "Terça-feira", "Quarta-feira", "Quinta-feira", "Sexta-feira", "Sábado"];
+            let weekday = semana[today.getDay()];
+
+            dia.innerHTML = weekday + ', ' + day;
+            hora.innerHTML = time;
+        }
+
+        setInterval(getTime, 1000)
+    
     </script>
 </body>
 </html>
