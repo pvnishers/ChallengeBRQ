@@ -14,232 +14,251 @@
     <link rel="stylesheet" href="styles.css">
     <title>Document</title>
 </head>
-<body>
-    <div class="d-flex flex-row barra-topo">
-        <p id="mode">Modo Claro</p>
-        <button class="" onclick="modoEscuro()">
-            <i class="fa-solid fa-toggle-off modoClaro modos"></i>
-            <i class="fa-solid fa-toggle-on hide modoEscuro modos" style="color:white"></i>
-        </button>
-    </div>
-    <div class="container">       
-        <div class="row">
-            <div class="col-7 justify-content-center">
-                <div id="header-box" class="header-box row">
-                    <h4 id="header-day" class="row justify-content-center"></h4>
-                    <h1 id="header-time" class="g-gradient row justify-content-center"></h1>
-                    
-                </div>
-                <div class="row justify-content-center">
-                    <div id="player-box" class="d-flex flex-row justify-content-around">
-                        <div class="album-art align-self-center">
-
-                        </div>
-                        <div class="track-info align-self-center">
-                            <p>Running Up That Hill(A Deal With God)</p>
-                            <p class="text-center">Kate Bush</p>
-                            <p class="text-center">Hounds Of Love</p>
-                        </div>
-                        <div class="player-controls align-self-center d-flex flex-row">
-                            <i class="fa-solid fa-backward"></i>
-                            <i class="fa-solid fa-pause"></i>
-                            <i class="fa-solid fa-forward"></i>
+    <body>
+        <div class="d-flex flex-row barra-topo">
+            <p id="mode">Modo Claro</p>
+            <button class="" onclick="modoEscuro()">
+                <i class="fa-solid fa-toggle-off modoClaro modos"></i>
+                <i class="fa-solid fa-toggle-on hide modoEscuro modos" style="color:white"></i>
+            </button>
+        </div>
+        <div class="container">       
+            <div class="row">
+                <div class="col-7 justify-content-center">
+                    <div id="header-box" class="header-box row">
+                        <h4 id="header-day" class="row justify-content-center"></h4>
+                        <h1 id="header-time" class="g-gradient row justify-content-center"></h1>
+                    </div>
+                    <div class="row justify-content-center">
+                        <div id="player-box" class="d-flex flex-row justify-content-around">
+                            <div class="album-art align-self-center">
+                            </div>
+                            <div class="track-info align-self-center">
+                                <p>Running Up That Hill(A Deal With God)</p>
+                                <p class="text-center">Kate Bush</p>
+                                <p class="text-center">Hounds Of Love</p>
+                            </div>
+                            <div class="player-controls align-self-center d-flex flex-row">
+                                <i class="fa-solid fa-backward"></i>
+                                <i class="fa-solid fa-pause"></i>
+                                <i class="fa-solid fa-forward"></i>
+                            </div>
                         </div>
                     </div>
-                </div>
-                <div id="widget-box" class="row justify-content-between">
-                    <div class="widget-row">
-                        <div class="widget-group d-flex flex-column align-items-center">     
-                            <button onclick="acenderLuz()">
+                    <div id="widget-box" class="row justify-content-between">
+                        <div class="widget-row">
+                            <div class="widget-group d-flex flex-column align-items-center">     
+                                <button onclick="acenderLuz()">
+                                    <div class="widget-sm">
+                                        <i id="luz" class="fa-regular fa-lightbulb icon-gradient"></i>
+                                    </div>
+                                </button>
+                                <p>Acender/Apagar luzes - Garagem</p>
+                            </div>  
+                            <div class="widget-group">
+                                <button onclick="abrirGaragem()">
+                                    <div class="widget-sm">
+                                        <i id="garagem" class="fa-solid fa-warehouse icon-gradient"></i>
+                                    </div>
+                                </button>
+                                <p>Abrir/Fechar - Garagem</p>
+                            </div>
+                            <div class="widget-group">
                                 <div class="widget-sm">
-                                    <i id="luz" class="fa-regular fa-lightbulb icon-gradient"></i>
+                                    <i class="fa-solid fa-gas-pump icon-gradient"></i>
                                 </div>
-                            </button>
-                            <p>Acender/Apagar luzes - Garagem</p>
-                        </div>  
-                        <div class="widget-group">
-                            <button onclick="abrirGaragem()">
+                                <p>Histórico de Abastecimento</p>
+                            </div>
+                        </div>
+                        <div class="widget-row">
+                            <div class="widget-group">
                                 <div class="widget-sm">
-                                    <i id="garagem" class="fa-solid fa-warehouse icon-gradient"></i>
+                                    <i class="fa-solid fa-location-arrow icon-gradient"></i>
                                 </div>
-                            </button>
-                            <p>Abrir/Fechar - Garagem</p>
-                        </div>
-                        <div class="widget-group">
-                            <div class="widget-sm">
-                                <i class="fa-solid fa-gas-pump icon-gradient"></i>
+                                <p>GPS</p>
                             </div>
-                            <p>Histórico de Abastecimento</p>
-                        </div>
-                    </div>
-                    <div class="widget-row">
-                        <div class="widget-group">
-                            <div class="widget-sm">
-                                <i class="fa-solid fa-location-arrow icon-gradient"></i>
+                            <div class="widget-group">
+                                <div class="widget-sm">
+                                    <i class="fa-solid fa-toolbox icon-gradient"></i>
+                                </div>
+                                <p>Manual Eletrônico</p>
                             </div>
-                            <p>GPS</p>
-                        </div>
-                        <div class="widget-group">
-                            <div class="widget-sm">
-                                <i class="fa-solid fa-toolbox icon-gradient"></i>
+                            <div class="widget-group">
+                                <button id="btn-popup">
+                                    <div class="widget-sm">
+                                        <i class="fa-brands fa-sistrix icon-gradient"></i>
+                                    </div>
+                                </button>
+                                <p>Atalhos</p>
                             </div>
-                            <p>Manual Eletrônico</p>
-                        </div>
-                        <div class="widget-group">
-                            <div class="widget-sm">
-                                <i class="fa-brands fa-sistrix"></i>
-                            </div>
-                            <p>?</p>
-                        </div>
-                        <div class="popup">
-                            <ul>
-                                <li>Rota para hospital mais próximo</li>
-                                <li>SOS</li>
-                                <li>Rota para posto de abastecimento mais próximo</li>
-                            </ul>
                         </div>
                     </div>
                 </div>
-            </div>
-            <div id="widget-column" class="col-5">
-                <div class="widget-group">
-                    <div class="widget-m">
-                        <div class="icons-widget col-3">
-                            <i class="fa-solid fa-snowflake"></i>
-                            <button id="botaoAc" onclick="estadoAC()"><i class="fa-solid fa-power-off icon-ac"></i></button>
+                <div id="widget-column" class="col-5">
+                    <div class="widget-group">
+                        <div class="widget-m">
+                            <div class="icons-widget col-3">
+                                <i class="fa-solid fa-snowflake"></i>
+                                <button id="botaoAc"><i id="icon-ac" class="fa-solid fa-power-off red-ac"></i></button>
+                            </div>
+                            <input type="number" id="nmrAc" value="19" style="display:none;"/>
+                            <p id="temperaturaAc" class="align-self-center">19°</p>
+                            <div class="buttons-ac">
+                                <button id="aumentarAc" onclick="aumentarAC()"><i class="fa-solid fa-circle-plus"></i></button>
+                            <button id="diminuirAc" onclick="diminuirAC()"><i class="fa-solid fa-circle-minus"></i></button>
+                            </div>
                         </div>
-                        <input type="number" id="nmrAc" value="19" style="display:none;"/>
-                        <p id="temperaturaAc" class="align-self-center">19°</p>
-                        <div class="buttons-ac">
-                            <button id="aumentarAc" onclick="aumentarAC()"><i class="fa-solid fa-circle-plus"></i></button>
-                        <button id="diminuirAc" onclick="diminuirAC()"><i class="fa-solid fa-circle-minus"></i></button>
-                        </div>
+                        <p id="acEstado">A/C Desligado</p>
                     </div>
-                    <p id="acEstado">A/C Desligado</p>
-                </div>
-                <div class="widget-group">
-                    <div class="row widget-m">
+                    <div class="widget-group">
+                        <div class="row widget-m">
+                            
+                        </div>
                         
                     </div>
-                    
-                </div>
-                <div class="widget-group">
-                    <div class="row widget-m">
+                    <div class="widget-group">
+                        <div class="row widget-m">
 
+                        </div>
+                        
                     </div>
-                    
-                </div>
-                <div class="widget-group">
-                    <div class="row widget-m">
+                    <div class="widget-group">
+                        <div class="row widget-m">
 
+                        </div>
+                        
                     </div>
-                    
                 </div>
             </div>
+            <div class="col-5 popup hide">
+                <ul>
+                    <li><button>Rota para hospital mais próximo</button></li>
+                    <li><button>SOS</button></li>
+                    <li><button>Rota para posto de abastecimento mais próximo</button></li>
+                </ul>
+            </div>
         </div>
-    </div>
-    
-    <!-- JavaScript Bundle with Popper -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-u1OknCvxWvY5kfmNBILK2hRnQC3Pr17a+RTT6rIHI7NnikvbZlHgTPOOmMi466C8" crossorigin="anonymous"></script>
-
-    <script src="https://code.jquery.com/jquery-3.6.1.min.js"></script>
-    <script>
-        function estadoAC(){
-            let icone = document.querySelector('.icon-ac');
-            let estado = document.querySelector('#acEstado');
-
+        <div class="atalho-popup hide"></div>
         
+        <!-- JavaScript Bundle with Popper -->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-u1OknCvxWvY5kfmNBILK2hRnQC3Pr17a+RTT6rIHI7NnikvbZlHgTPOOmMi466C8" crossorigin="anonymous"></script>
 
-            if(icone.style.color == 'red'){
-                icone.style.color = 'blue';
-                estado.innerHTML = "A/C Ligado";
-            }
+        <script src="https://code.jquery.com/jquery-3.6.1.min.js"></script>
+        <script>
 
-            else{
-                icone.style.color = 'red';
-                estado.innerHTML = "A/C Desligado";
-            }
-        }
+            $.fn.extend({
+                toggleText: function(a, b){
+                    return this.text(this.text() == b ? a : b);
+                }
+            });
 
-        function aumentarAC(){
-            let nmr = document.getElementById('nmrAc').value;
-            const temp = document.getElementById('temperaturaAc');
-            if(nmr < 25){
-                nmr++;
-                document.getElementById('nmrAc').value = nmr;
-                temp.innerHTML = nmr + '°';
-            }
-        }
-
-        function diminuirAC(){
-            let nmr = document.getElementById('nmrAc').value;
-            const temp = document.getElementById('temperaturaAc');
-            if(nmr > 14){
-                nmr--;
-                document.getElementById('nmrAc').value = nmr;
-                temp.innerHTML = nmr + '°';
-            }
-        }
-
-        function acenderLuz(){
-            const luz = document.getElementById('luz');
-
-            luz.classList.toggle('icon-active');
-
-        }
-
-        function abrirGaragem(){
-            const garagem = document.getElementById('garagem');
-
-            garagem.classList.toggle('icon-active');
-
-        }
-
-        function modoEscuro(){
-            const fundo = document.querySelector('body');
-            const header = document.getElementById('header-box');
-            const botaoClaro = document.querySelector('.modoClaro'); 
-            const botaoEscuro = document.querySelector('.modoEscuro');
-            const mode = document.querySelector('#mode');
+            let estado = document.querySelector('#estadoAc');
+            let icone = document.querySelector('#icon-ac');
+                $('#botaoAc').click(function(){
+                    $('#icon-ac').toggleClass('blue-ac');
+                    $('#acEstado').toggleText('A/C Desligado', 'A/C Ligado'); 
+                });
             
 
-            if(botaoClaro.classList.contains('hide')){
-                $('.modoEscuro').toggleClass('hide');
-                $('.modoClaro').toggleClass('hide');
-                fundo.classList.remove('dark-mode');
-                header.classList.remove('dark-mode-header');                
-                $('.widget-sm').toggleClass('widget-dark');          
-                $('.widget-m').toggleClass('widget-dark');
-                mode.innerHTML = 'Modo Claro';
+            function aumentarAC(){
+                let nmr = document.getElementById('nmrAc').value;
+                const temp = document.getElementById('temperaturaAc');
+                if(nmr < 25){
+                    nmr++;
+                    document.getElementById('nmrAc').value = nmr;
+                    temp.innerHTML = nmr + '°';
+                }
             }
 
-            else{               
-                $('.modoEscuro').toggleClass('hide');
-                $('.modoClaro').toggleClass('hide');
-                $('body').toggleClass('dark-mode');
-                header.classList.toggle('dark-mode-header');
-                $('.widget-sm').toggleClass('widget-dark');
-                $('.widget-m').toggleClass('widget-dark');
-                mode.innerHTML = 'Modo Escuro';
+            function diminuirAC(){
+                let nmr = document.getElementById('nmrAc').value;
+                const temp = document.getElementById('temperaturaAc');
+                if(nmr > 14){
+                    nmr--;
+                    document.getElementById('nmrAc').value = nmr;
+                    temp.innerHTML = nmr + '°';
+                }
             }
-        }
 
-        function getTime(){
-            let today = new Date();
-        const mes = ["Janeiro", "Fevereiro", "Março", "Abril", "Maio", "Junho", "Julho", "Agosto", "Setembro", "Outubro", "Novembro", "Dezembro"];
-            let day = today.getDate() + " de " + (mes[today.getMonth()]) + " de " + today.getFullYear();
-            let time = today.getHours() + ":" + today.getMinutes();
-            const hora = document.querySelector('#header-time');
-            const dia = document.querySelector('#header-day');
-            const semana = ["Domingo", "Segunda-feira", "Terça-feira", "Quarta-feira", "Quinta-feira", "Sexta-feira", "Sábado"];
-            let weekday = semana[today.getDay()];
+            function acenderLuz(){
+                const luz = document.getElementById('luz');
 
-            dia.innerHTML = weekday + ', ' + day;
-            hora.innerHTML = time;
-        }
+                luz.classList.toggle('icon-active');
 
-        setInterval(getTime, 1000)
-    
-    </script>
-</body>
+            }
+
+            function abrirGaragem(){
+                const garagem = document.getElementById('garagem');
+
+                garagem.classList.toggle('icon-active');
+
+            }
+
+            function modoEscuro(){
+                const fundo = document.querySelector('body');
+                const header = document.getElementById('header-box');
+                const botaoClaro = document.querySelector('.modoClaro'); 
+                const botaoEscuro = document.querySelector('.modoEscuro');
+                const mode = document.querySelector('#mode');
+                
+
+                if(botaoClaro.classList.contains('hide')){
+                    $('.modoEscuro').toggleClass('hide');
+                    $('.modoClaro').toggleClass('hide');
+                    fundo.classList.remove('dark-mode');
+                    header.classList.remove('dark-mode-header');                
+                    $('.widget-sm').toggleClass('widget-dark');          
+                    $('.widget-m').toggleClass('widget-dark');
+                    $('.popup').toggleClass('popup-dark');
+                    mode.innerHTML = 'Modo Claro';
+                }
+
+                else{               
+                    $('.modoEscuro').toggleClass('hide');
+                    $('.modoClaro').toggleClass('hide');
+                    $('body').toggleClass('dark-mode');
+                    header.classList.toggle('dark-mode-header');
+                    $('.widget-sm').toggleClass('widget-dark');
+                    $('.widget-m').toggleClass('widget-dark');               
+                    $('.popup').toggleClass('popup-dark');
+                    mode.innerHTML = 'Modo Escuro';
+                }
+            }
+
+            function getTime(){
+                function addZero(i) {
+                    if (i < 10) {i = "0" + i}
+                    return i;
+                }
+                let today = new Date();
+                const mes = ["Janeiro", "Fevereiro", "Março", "Abril", "Maio", "Junho", "Julho", "Agosto", "Setembro", "Outubro", "Novembro", "Dezembro"];
+                let day = today.getDate() + " de " + (mes[today.getMonth()]) + " de " + today.getFullYear();
+                let time = today.getHours() + ":" + addZero(today.getMinutes());
+                const hora = document.querySelector('#header-time');
+                const dia = document.querySelector('#header-day');
+                const semana = ["Domingo", "Segunda-feira", "Terça-feira", "Quarta-feira", "Quinta-feira", "Sexta-feira", "Sábado"];
+                let weekday = semana[today.getDay()];
+
+                dia.innerHTML = weekday + ', ' + day;
+                hora.innerHTML = time;
+            }
+
+            $('#btn-popup').click(function(){
+                $('.atalho-popup').show();
+                $('.popup').show();
+            });
+
+            $(document).click(function(){           
+                $('.atalho-popup').hide();
+                $('.popup').hide();
+            });
+
+            $('#btn-popup').on('click', function (event) {
+                event.stopPropagation();
+            });
+            
+            setInterval(getTime, 1000)
+        
+        </script>
+    </body>
 </html>

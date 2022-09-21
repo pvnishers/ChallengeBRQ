@@ -4,6 +4,7 @@
 
 body{
     background-image: linear-gradient(0deg, #f3e7e9 0%, #e3eeff 99%, #e3eeff 100%);
+    min-height: 789px;
 }
 
 .dark-mode{
@@ -91,7 +92,7 @@ body{
     display: flex;
     flex-direction: row;
     justify-content: space-around;
-    margin-top: 39.5px;
+    margin-top: 27px;
 }
 
 .widget-m{
@@ -181,9 +182,14 @@ body{
 }
 
 
-.icon-ac{
+.red-ac{
     font-size: 40px !important;
     color: red;
+}
+
+.blue-ac{
+    font-size: 40px !important;
+    color: blue !important;
 }
 
 .buttons-ac{
@@ -204,6 +210,58 @@ button{
 }
 
 .popup{
-    background-color: white;
+    background-color: #dddd;
+    font-size: 28px;
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    top: 42%;
+    left: 51%;
+    z-index: 1;
+    height: 300px;
+    border-radius: 20px;
+    min-width: 750px;
+    padding: 5px;
+    z-index: 2;
+    text-align: center;
+    justify-content: center;
+}
+
+.popup ul>li{
+    list-style: none;
+}
+
+.popup ul>li>button{
+    margin: 25px;
+    background-color: rgb(255,255,255,0.1);
+    border-radius: 10px;
+    margin: 10px;
+    padding: 5px;
+    width: 95%;
+    height: 80px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.atalho-popup{
+    background-color: rgb(67, 67, 67, 0.5);
+    min-width: 100%;
+    min-height: 100%;
+    z-index: 1;
+    position: absolute;
+    top: 0%;
+}
+
+.hide{
     display: none;
+}
+
+.popup-dark{
+    background-image: linear-gradient(0deg, #434343 0%, #000000 100%);
+}
+
+.popup-dark ul>li>button {  
+    color: white;
 }
