@@ -96,8 +96,8 @@ body{
 }
 
 .widget-m{
-    width: 300px;
-    height: 157px;
+    width: 330px;
+    height: 197px;
     color: #000000 !important;
     background-color: white;
     border-radius: 20px;
@@ -108,9 +108,6 @@ body{
     -webkit-box-shadow: 6px 6px 23px -6px rgba(0,0,0,0.41);
     -moz-box-shadow: 6px 6px 23px -6px rgba(0,0,0,0.41);
     box-shadow: 6px 6px 23px -6px rgba(0,0,0,0.41);
-    
-    
-
 }
 
 .widget-m p{
@@ -264,4 +261,95 @@ button{
 
 .popup-dark ul>li>button {  
     color: white;
+}
+
+.info-clima{
+    color:  white;
+    z-index: 1;
+    position: absolute;
+    width: 330px;
+    height: 197px;
+    background-color: rgb(0, 0, 0, 0.2);
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    
+}
+
+#fundo-clima{
+    background-size: cover;
+    filter: blur(2px);
+    -webkit-filter: blur(2px);
+    min-width: 330px;
+    min-height: 197px;
+    border-radius: 20px;
+}
+
+.temperaturas{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    text-align: end;
+}
+
+.col-clima{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+
+.col-clima > span{
+    font-size: 11px;
+}
+
+.temp-max-min{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-self: flex-end;
+}
+
+.alerta{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    background-color: red;
+    border-radius: 20px;
+    height: 197px;
+    min-width: 330px;
+}
+
+.alerta p{
+    font-size: 60px;
+}
+
+.alerta span{
+font-size: 15px;
+}
+
+@keyframes blink {
+    50% {
+      opacity: 0.0;
+    }
+  }
+.blink {
+    animation: blink 1s step-start 0s infinite;
+}
+
+.w-alerta{
+    width: 330px;
+    height: 197px;
+    color: #000000 !important;
+    background-color: red;
+    border-radius: 20px;
+    display: flex;
+    flex-direction: row;
+    padding: 0px 10px;
+    justify-content: space-around;
+    -webkit-box-shadow: 6px 6px 23px -6px rgba(0,0,0,0.41);
+    -moz-box-shadow: 6px 6px 23px -6px rgba(0,0,0,0.41);
+    box-shadow: 6px 6px 23px -6px rgba(0,0,0,0.41);
 }

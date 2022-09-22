@@ -111,20 +111,38 @@
                         <p id="acEstado">A/C Desligado</p>
                     </div>
                     <div class="widget-group">
-                        <div class="row widget-m">
-                            
+                        <div class="row widget-m clima">
+                            <div id="fundo-clima"></div>
+                            <div class="info-clima">
+                                <div class="cidade-clima"><span>São Paulo <i class="fa-solid fa-location-dot"></i></span></div>
+                                <div class="temperaturas">
+                                    <p id="temperaturaCl">25°</p>
+                                    <div class="col-clima">
+                                        <div class="temp-max-min">
+                                            <span>Máxima: <span id="temp-max">19°</span></span>
+                                            <span>Mínima: <span id="temp-min">17°</span></span>
+                                        </div>
+                                        <span>Condições esperadas:<br><span id="cond-esperadas">Sol</span></span>
+                                    </div>
+                                </div>
+                                <div class="d-flex row-reverse justify-content-between">
+                                    <div id="icone-clima">
+                                        <i class=""></i><span id="condicoes"> Ensolarado</span>
+                                    </div>
+                                    <div class="">
+                                        <i class="fa-solid fa-wind"></i> <span id="vel-vento"> 24km/h</span>
+                                    </div>
+                                </div>
+                            </div>                            
                         </div>
-                        
+                        <p>Clima</p>
                     </div>
                     <div class="widget-group">
-                        <div class="row widget-m">
-
-                        </div>
-                        
-                    </div>
-                    <div class="widget-group">
-                        <div class="row widget-m">
-
+                        <div class="row w-alerta">
+                            <div class="alerta blink">
+                                <p><i class="fa-solid fa-triangle-exclamation"></i></p>
+                                <span><b>PORTA DIANTEIRA DIREITA ABERTA</b></span>
+                            </div>
                         </div>
                         
                     </div>
@@ -163,7 +181,7 @@
             function aumentarAC(){
                 let nmr = document.getElementById('nmrAc').value;
                 const temp = document.getElementById('temperaturaAc');
-                if(nmr < 25){
+                if(nmr < 28){
                     nmr++;
                     document.getElementById('nmrAc').value = nmr;
                     temp.innerHTML = nmr + '°';
@@ -173,7 +191,7 @@
             function diminuirAC(){
                 let nmr = document.getElementById('nmrAc').value;
                 const temp = document.getElementById('temperaturaAc');
-                if(nmr > 14){
+                if(nmr > 16){
                     nmr--;
                     document.getElementById('nmrAc').value = nmr;
                     temp.innerHTML = nmr + '°';
@@ -205,8 +223,8 @@
                 if(botaoClaro.classList.contains('hide')){
                     $('.modoEscuro').toggleClass('hide');
                     $('.modoClaro').toggleClass('hide');
-                    fundo.classList.remove('dark-mode');
-                    header.classList.remove('dark-mode-header');                
+                    $('body').toggleClass('dark-mode');
+                    $('#header-box').toggleClass('dark-mode-header');                
                     $('.widget-sm').toggleClass('widget-dark');          
                     $('.widget-m').toggleClass('widget-dark');
                     $('.popup').toggleClass('popup-dark');
@@ -217,7 +235,7 @@
                     $('.modoEscuro').toggleClass('hide');
                     $('.modoClaro').toggleClass('hide');
                     $('body').toggleClass('dark-mode');
-                    header.classList.toggle('dark-mode-header');
+                    $('#header-box').toggleClass('dark-mode-header');
                     $('.widget-sm').toggleClass('widget-dark');
                     $('.widget-m').toggleClass('widget-dark');               
                     $('.popup').toggleClass('popup-dark');
@@ -257,7 +275,81 @@
                 event.stopPropagation();
             });
             
-            setInterval(getTime, 1000)
+            setInterval(getTime, 1000);
+
+            function getClima(){$.ajax({
+                url: 'https://api.hgbrasil.com/weather?woeid=455827&format=json-cors&key=c507c5bc',
+                contentType: "application/json",
+                dataType: 'json',
+                success: function(result){
+                    attClima(result);
+                }
+            });
+        }
+        getClima();
+        setInterval(getClima, 60000)
+
+            function attClima(result){
+                
+                $('#temperaturaCl').html(result.results.temp + '°');
+                $('#condicoes').html(' ' + result.results.description);
+                $('#temp-max').html(result.results.forecast[0].max + '°');
+                $('#temp-min').html(result.results.forecast[0].min + '°');
+                $('#cond-esperadas').html(result.results.forecast[0].description);
+                $('#vel-vento').html(result.results.wind_speedy);
+
+               
+
+                if(result.results.condition_slug == 'rain'){
+                    $('#icone-clima').html('<i class="fa-solid fa-cloud-rain"></i>');
+                    $('#fundo-clima').css('background-image', 'url("/assets/imgs/rainy.jpg")');
+                }
+                else if(result.results.condition_slug == 'cloudly_day'){
+                    $('#icone-clima > i').html('<i class="fa-solid fa-cloud-sun"></i>');
+                    $('#fundo-clima').css('background-image', 'url("/assets/imgs/cloudly.jpg")');
+                }
+                else if(result.results.condition_slug == 'cloudly_night'){
+                    $('#icone-clima > i').html('<i class="fa-solid fa-cloud-moon"></i>');
+                    $('#fundo-clima').css('background-image', 'url("/assets/imgs/cloudly_n.jpg")');
+                }
+                else if(result.results.condition_slug == 'storm'){
+                    $('#icone-clima > i').html('<i class="fa-solid fa-cloud-bolt"></i>');
+                    $('#fundo-clima').css('background-image', 'url("/assets/imgs/storm.jpg")');
+                }
+                else if(result.results.condition_slug == 'clear_day'){
+                    $('#icone-clima > i').html('<i class="fa-solid fa-sun"></i>');
+                    $('#fundo-clima').css('background-image', 'url("/assets/imgs/clear.jpg")');
+                }
+                else if(result.results.condition_slug == 'clear_night'){
+                    $('#icone-clima > i').html('<i class="fa-solid fa-moon"></i>');
+                    $('#fundo-clima').css('background-image', 'url("/assets/imgs/clear_n.jpg")');
+                }
+                else if(result.results.condition_slug == 'fog'){
+                    $('#icone-clima > i').html('<i class="fa-solid fa-smog"></i>');
+                    $('#fundo-clima').css('background-image', 'url("/assets/imgs/fog.jpg")');
+                }
+                else if(result.results.condition_slug == 'snow'){
+                    $('#icone-clima > i').html('<i class="fa-solid fa-snowflake"></i>');
+                    $('#fundo-clima').css('background-image', 'url("/assets/imgs/snow.jpg")');
+                }
+                else if(result.results.condition_slug == 'hail'){
+                    $('#icone-clima > i').html('<i class="fa-solid fa-cloud-rain"></i>');
+                    $('#fundo-clima').css('background-image', 'url("/assets/imgs/rainy.jpg")');
+                }
+                else if(result.results.condition_slug == 'none-day'){
+                    $('#icone-clima > i').html('<i class="fa-solid fa-sun"></i>');
+                    $('#fundo-clima').css('background-image', 'url("/assets/imgs/clear.jpg")');
+                }
+                else if(result.results.condition_slug == 'none-night'){
+                    $('#icone-clima > i').html('<i class="fa-solid fa-moon"></i>');
+                    $('#fundo-clima').css('background-image', 'url("/assets/imgs/clear_n.jpg")');
+                }
+                else{
+                    $('#icone-clima > i').html('<i class="fa-solid fa-cloud"></i>');
+                    $('#fundo-clima').css('background-image', 'url("/assets/imgs/cloudly.jpg")');
+                }
+            }
+            
         
         </script>
     </body>
