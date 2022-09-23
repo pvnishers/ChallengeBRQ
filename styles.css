@@ -55,7 +55,7 @@ body{
     height: 75px;
     width: 559px;
     border-radius: 20px;
-    margin-top: 70px;
+    margin: 40px;
 }
 
 
@@ -92,7 +92,7 @@ body{
     display: flex;
     flex-direction: row;
     justify-content: space-around;
-    margin-top: 27px;
+    margin-top: 15px;
 }
 
 .widget-m{
@@ -175,7 +175,7 @@ body{
 }
 
 .icons-widget i{
-    font-size: 25px;
+    font-size: 35px;
 }
 
 
@@ -207,7 +207,7 @@ button{
 }
 
 .popup{
-    background-color: #dddd;
+    background-color: rgb(221, 221, 221);
     font-size: 28px;
     position: absolute;
     display: flex;
@@ -352,4 +352,8 @@ font-size: 15px;
     -webkit-box-shadow: 6px 6px 23px -6px rgba(0,0,0,0.41);
     -moz-box-shadow: 6px 6px 23px -6px rgba(0,0,0,0.41);
     box-shadow: 6px 6px 23px -6px rgba(0,0,0,0.41);
+}
+
+.config{
+    font-size: 35px;
 }
