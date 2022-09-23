@@ -46,34 +46,6 @@ function abrirGaragem(){
 
 }
 
-function modoEscuro(){
-    const botaoClaro = document.querySelector('.modoClaro'); 
-    const mode = document.querySelector('#mode');
-    
-
-    if(botaoClaro.classList.contains('hide')){
-        $('.modoEscuro').toggleClass('hide');
-        $('.modoClaro').toggleClass('hide');
-        $('body').toggleClass('dark-mode');
-        $('#header-box').toggleClass('dark-mode-header');                
-        $('.widget-sm').toggleClass('widget-dark');          
-        $('.widget-m').toggleClass('widget-dark');
-        $('.popup').toggleClass('popup-dark');
-        mode.innerHTML = 'Modo Claro';
-    }
-
-    else{               
-        $('.modoEscuro').toggleClass('hide');
-        $('.modoClaro').toggleClass('hide');
-        $('body').toggleClass('dark-mode');
-        $('#header-box').toggleClass('dark-mode-header');
-        $('.widget-sm').toggleClass('widget-dark');
-        $('.widget-m').toggleClass('widget-dark');               
-        $('.popup').toggleClass('popup-dark');
-        mode.innerHTML = 'Modo Escuro';
-    }
-}
-
 function getTime(){
     function addZero(i) {
         if (i < 10) {i = "0" + i}

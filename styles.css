@@ -1,38 +1,17 @@
 *{
     font-family: 'M PLUS 1', sans-serif;
+    color: white;
+    user-select: none;
 }
 
 body{
-    background-image: linear-gradient(0deg, #f3e7e9 0%, #e3eeff 99%, #e3eeff 100%);
+    background-image: url('/assets/imgs/wallpaper2.jpg');
     min-height: 789px;
-}
-
-.dark-mode{
-    background-image: linear-gradient(0deg, #434343 0%, #000000 100%);
-    color: white;
-}
-
-.dark-mode-header{
-    margin-top: 30px !important;
-    background: -webkit-linear-gradient(0deg, #f3e7e9 0%, #e3eeff 99%, #e3eeff 100%) !important;
-    -webkit-background-clip: text !important;
-    -webkit-text-fill-color: transparent !important;
-}
-
-.widget-dark{
-    background: linear-gradient(-20deg, #616161 0%, #9bc5c3 100%) !important;
+    background-size: cover;
 }
 
 .hide{
     display: none;
-}
-
-.modos{
-    font-size: 30px;
-}
-
-#modes{
-    position: fixed;
 }
 
 .barra-topo{
@@ -40,10 +19,8 @@ body{
 }
 
 #header-box{
-    margin-top: 30px;
-    background: -webkit-linear-gradient(0deg, #434343 0%, #000000 100%);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
+    margin-top: 10px;
+    color: white;
 }
 
 #header-time{
@@ -60,7 +37,7 @@ body{
 
 
 .widget-sm{
-    background-color: white;
+    background-color: rgb(46, 59, 67, 0.9);
     height: 120px;
     width: 120px;
     border-radius: 20px;
@@ -98,8 +75,7 @@ body{
 .widget-m{
     width: 330px;
     height: 197px;
-    color: #000000 !important;
-    background-color: white;
+    background-color: rgb(46, 59, 67, 0.9);
     border-radius: 20px;
     display: flex;
     flex-direction: row;
@@ -125,7 +101,6 @@ body{
     font-size: 60px;
 }
 
-
 .album-art{
     width: 50px;
     height: 50px;
@@ -148,7 +123,7 @@ body{
 }
 
 .icon-gradient{
-    background: linear-gradient(0deg, #434343 0%, #000000 100%);
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
     background-clip: text;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
@@ -186,7 +161,7 @@ body{
 
 .blue-ac{
     font-size: 40px !important;
-    color: blue !important;
+    color: #0e4fc7 !important;
 }
 
 .buttons-ac{
@@ -197,6 +172,7 @@ body{
 
 .buttons-ac i{
     font-size: 40px;
+    color: white;
 }
 
 button{
@@ -207,10 +183,10 @@ button{
 }
 
 .popup{
-    background-color: rgb(221, 221, 221);
+    background-color: rgb(46, 59, 67, 0.9);
     font-size: 28px;
     position: absolute;
-    display: flex;
+    display: none;
     flex-direction: column;
     top: 42%;
     left: 51%;
@@ -251,18 +227,6 @@ button{
     top: 0%;
 }
 
-.hide{
-    display: none;
-}
-
-.popup-dark{
-    background-image: linear-gradient(0deg, #434343 0%, #000000 100%);
-}
-
-.popup-dark ul>li>button {  
-    color: white;
-}
-
 .info-clima{
     color:  white;
     z-index: 1;
@@ -279,8 +243,8 @@ button{
 
 #fundo-clima{
     background-size: cover;
-    filter: blur(2px);
-    -webkit-filter: blur(2px);
+    filter: blur(1px);
+    -webkit-filter: blur(1px);
     min-width: 330px;
     min-height: 197px;
     border-radius: 20px;
@@ -342,7 +306,6 @@ font-size: 15px;
 .w-alerta{
     width: 330px;
     height: 197px;
-    color: #000000 !important;
     background-color: red;
     border-radius: 20px;
     display: flex;
@@ -356,4 +319,5 @@ font-size: 15px;
 
 .config{
     font-size: 35px;
+    color: white;
 }

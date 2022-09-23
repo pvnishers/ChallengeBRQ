@@ -15,17 +15,10 @@
     <title>Document</title>
 </head>
     <body>
-        <div class="d-flex flex-row barra-topo">
-            <p id="mode">Modo Claro</p>
-            <button class="" onclick="modoEscuro()">
-                <i class="fa-solid fa-toggle-off modoClaro modos"></i>
-                <i class="fa-solid fa-toggle-on hide modoEscuro modos" style="color:white"></i>
-            </button>
-        </div>
+        <button><i class="fa-solid fa-gear config"></i></button>
         <div class="container">       
             <div class="row">
                 <div class="col-7 justify-content-center">
-                    <button><i class="fa-solid fa-gear config"></i></button>
                     <div id="header-box" class="header-box row">
                         <h4 id="header-day" class="row justify-content-center"></h4>
                         <h1 id="header-time" class="g-gradient row justify-content-center"></h1>
@@ -140,8 +133,8 @@
                     </div>
                     <div class="widget-group">
                         <div class="row w-alerta">
-                            <div class="alerta blink">
-                                <p><i class="fa-solid fa-triangle-exclamation"></i></p>
+                            <div class="alerta">
+                                <p><i class="fa-solid fa-triangle-exclamation blink"></i></p>
                                 <span><b>PORTA DIANTEIRA DIREITA ABERTA</b></span>
                             </div>
                         </div>
@@ -149,7 +142,7 @@
                     </div>
                 </div>
             </div>
-            <div class="col-5 popup hide">
+            <div class="col-5 popup">
                 <ul>
                     <li><button>Rota para hospital mais próximo</button></li>
                     <li><button>SOS</button></li>
