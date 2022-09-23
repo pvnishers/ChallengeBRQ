@@ -47,10 +47,7 @@ function abrirGaragem(){
 }
 
 function modoEscuro(){
-    const fundo = document.querySelector('body');
-    const header = document.getElementById('header-box');
     const botaoClaro = document.querySelector('.modoClaro'); 
-    const botaoEscuro = document.querySelector('.modoEscuro');
     const mode = document.querySelector('#mode');
     
 
