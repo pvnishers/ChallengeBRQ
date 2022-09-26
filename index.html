@@ -1,161 +1,210 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <!-- CSS only -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=M+PLUS+1:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
-    <script src="https://kit.fontawesome.com/78a4d9e669.js" crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="styles.css">
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT"
+      crossorigin="anonymous"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=M+PLUS+1:wght@100;200;300;400;500;600;700;800;900&display=swap"
+      rel="stylesheet"
+    />
+    <script
+      src="https://kit.fontawesome.com/78a4d9e669.js"
+      crossorigin="anonymous"
+    ></script>
+    <link rel="stylesheet" href="styles.css" />
     <title>Document</title>
-</head>
-    <body>
-        <button><i class="fa-solid fa-gear config"></i></button>
-        <div class="container">       
-            <div class="row">
-                <div class="col-7 justify-content-center">
-                    <div id="header-box" class="header-box row">
-                        <h4 id="header-day" class="row justify-content-center"></h4>
-                        <h1 id="header-time" class="g-gradient row justify-content-center"></h1>
-                    </div>
-                    <div class="row justify-content-center">
-                        <div id="player-box" class="d-flex flex-row justify-content-around">
-                            <div class="album-art align-self-center">
-                            </div>
-                            <div class="track-info align-self-center">
-                                <p>Running Up That Hill(A Deal With God)</p>
-                                <p class="text-center">Kate Bush</p>
-                                <p class="text-center">Hounds Of Love</p>
-                            </div>
-                            <div class="player-controls align-self-center d-flex flex-row">
-                                <i class="fa-solid fa-backward"></i>
-                                <i class="fa-solid fa-pause"></i>
-                                <i class="fa-solid fa-forward"></i>
-                            </div>
-                        </div>
-                    </div>
-                    <div id="widget-box" class="row justify-content-between">
-                        <div class="widget-row">
-                            <div class="widget-group d-flex flex-column align-items-center">     
-                                <button onclick="acenderLuz()">
-                                    <div class="widget-sm">
-                                        <i id="luz" class="fa-regular fa-lightbulb icon-gradient"></i>
-                                    </div>
-                                </button>
-                                <p>Acender/Apagar luzes - Garagem</p>
-                            </div>  
-                            <div class="widget-group">
-                                <button onclick="abrirGaragem()">
-                                    <div class="widget-sm">
-                                        <i id="garagem" class="fa-solid fa-warehouse icon-gradient"></i>
-                                    </div>
-                                </button>
-                                <p>Abrir/Fechar - Garagem</p>
-                            </div>
-                            <div class="widget-group">
-                                <div class="widget-sm">
-                                    <i class="fa-solid fa-gas-pump icon-gradient"></i>
-                                </div>
-                                <p>Histórico de Abastecimento</p>
-                            </div>
-                        </div>
-                        <div class="widget-row">
-                            <div class="widget-group">
-                                <div class="widget-sm">
-                                    <i class="fa-solid fa-location-arrow icon-gradient"></i>
-                                </div>
-                                <p>GPS</p>
-                            </div>
-                            <div class="widget-group">
-                                <div class="widget-sm">
-                                    <i class="fa-solid fa-toolbox icon-gradient"></i>
-                                </div>
-                                <p>Manual Eletrônico</p>
-                            </div>
-                            <div class="widget-group">
-                                <button id="btn-popup">
-                                    <div class="widget-sm">
-                                        <i class="fa-brands fa-sistrix icon-gradient"></i>
-                                    </div>
-                                </button>
-                                <p>Atalhos</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div id="widget-column" class="col-5">
-                    <div class="widget-group">
-                        <div class="widget-m">
-                            <div class="icons-widget col-3">
-                                <i class="fa-solid fa-snowflake"></i>
-                                <button id="botaoAc"><i id="icon-ac" class="fa-solid fa-power-off red-ac"></i></button>
-                            </div>
-                            <input type="number" id="nmrAc" value="19" style="display:none;"/>
-                            <p id="temperaturaAc" class="align-self-center">19°</p>
-                            <div class="buttons-ac">
-                                <button id="aumentarAc" onclick="aumentarAC()"><i class="fa-solid fa-circle-plus"></i></button>
-                            <button id="diminuirAc" onclick="diminuirAC()"><i class="fa-solid fa-circle-minus"></i></button>
-                            </div>
-                        </div>
-                        <p id="acEstado">A/C Desligado</p>
-                    </div>
-                    <div class="widget-group">
-                        <div class="row widget-m clima">
-                            <div id="fundo-clima"></div>
-                            <div class="info-clima">
-                                <div class="cidade-clima"><span>São Paulo <i class="fa-solid fa-location-dot"></i></span></div>
-                                <div class="temperaturas">
-                                    <p id="temperaturaCl">25°</p>
-                                    <div class="col-clima">
-                                        <div class="temp-max-min">
-                                            <span>Máxima: <span id="temp-max">19°</span></span>
-                                            <span>Mínima: <span id="temp-min">17°</span></span>
-                                        </div>
-                                        <span>Condições esperadas:<br><span id="cond-esperadas">Sol</span></span>
-                                    </div>
-                                </div>
-                                <div class="d-flex row-reverse justify-content-between">
-                                    <div id="icone-clima">
-                                        <i class=""></i><span id="condicoes"> Ensolarado</span>
-                                    </div>
-                                    <div class="">
-                                        <i class="fa-solid fa-wind"></i> <span id="vel-vento"> 24km/h</span>
-                                    </div>
-                                </div>
-                            </div>                            
-                        </div>
-                        <p>Clima</p>
-                    </div>
-                    <div class="widget-group">
-                        <div class="row w-alerta">
-                            <div class="alerta">
-                                <p><i class="fa-solid fa-triangle-exclamation blink"></i></p>
-                                <span><b>PORTA DIANTEIRA DIREITA ABERTA</b></span>
-                            </div>
-                        </div>
-                        
-                    </div>
-                </div>
+  </head>
+  <body>
+    <button><i class="fa-solid fa-gear config"></i></button>
+    <div class="container">
+      <div class="row">
+        <div class="col-7 justify-content-center">
+          <div id="header-box" class="header-box row">
+            <h4 id="header-day" class="row justify-content-center"></h4>
+            <h1
+              id="header-time"
+              class="g-gradient row justify-content-center"
+            ></h1>
+          </div>
+          <div class="row justify-content-center">
+            <div id="player-box" class="d-flex flex-row justify-content-around">
+              <div class="album-art align-self-center"></div>
+              <div class="track-info align-self-center">
+                <p>Running Up That Hill(A Deal With God)</p>
+                <p class="text-center">Kate Bush</p>
+                <p class="text-center">Hounds Of Love</p>
+              </div>
+              <div class="player-controls align-self-center d-flex flex-row">
+                <i class="fa-solid fa-backward"></i>
+                <i class="fa-solid fa-pause"></i>
+                <i class="fa-solid fa-forward"></i>
+              </div>
             </div>
-            <div class="col-5 popup">
-                <ul>
-                    <li><button>Rota para hospital mais próximo</button></li>
-                    <li><button>SOS</button></li>
-                    <li><button>Rota para posto de abastecimento mais próximo</button></li>
-                </ul>
+          </div>
+          <div id="widget-box" class="row justify-content-between">
+            <div class="widget-row">
+              <div class="widget-group d-flex flex-column align-items-center">
+                <button onclick="acenderLuz()">
+                  <div class="widget-sm">
+                    <i
+                      id="luz"
+                      class="fa-regular fa-lightbulb icon-gradient"
+                    ></i>
+                  </div>
+                </button>
+                <p>Acender/Apagar luzes - Garagem</p>
+              </div>
+              <div class="widget-group">
+                <button onclick="abrirGaragem()">
+                  <div class="widget-sm">
+                    <i
+                      id="garagem"
+                      class="fa-solid fa-warehouse icon-gradient"
+                    ></i>
+                  </div>
+                </button>
+                <p>Abrir/Fechar - Garagem</p>
+              </div>
+              <div class="widget-group">
+                <div class="widget-sm">
+                  <i class="fa-solid fa-gas-pump icon-gradient"></i>
+                </div>
+                <p>Histórico de Abastecimento</p>
+              </div>
             </div>
+            <div class="widget-row">
+              <div class="widget-group">
+                <div class="widget-sm">
+                  <i class="fa-solid fa-location-arrow icon-gradient"></i>
+                </div>
+                <p>GPS</p>
+              </div>
+              <div class="widget-group">
+                <div class="widget-sm">
+                  <i class="fa-solid fa-toolbox icon-gradient"></i>
+                </div>
+                <p>Manual Eletrônico</p>
+              </div>
+              <div class="widget-group">
+                <button id="btn-popup">
+                  <div class="widget-sm">
+                    <i class="fa-brands fa-sistrix icon-gradient"></i>
+                  </div>
+                </button>
+                <p>Atalhos</p>
+              </div>
+            </div>
+          </div>
         </div>
-        <div class="atalho-popup hide"></div>
-        
-        <!-- JavaScript Bundle with Popper -->
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-u1OknCvxWvY5kfmNBILK2hRnQC3Pr17a+RTT6rIHI7NnikvbZlHgTPOOmMi466C8" crossorigin="anonymous"></script>
+        <div id="widget-column" class="col-5">
+          <div class="widget-group">
+            <div class="widget-m widgetAc">
+              <div class="acFundo"></div>
+              <div class="acInfo">
+                <div class="icons-widget col-3">
+                  <i class="fa-solid fa-snowflake"></i>
+                  <button id="botaoAc">
+                    <i id="icon-ac" class="fa-solid fa-power-off red-ac"></i>
+                  </button>
+                </div>
+                <input
+                  type="number"
+                  id="nmrAc"
+                  value="19"
+                  style="display: none"
+                />
+                <p id="temperaturaAc" class="align-self-center">19°</p>
+                <div class="buttons-ac">
+                  <button id="aumentarAc" onclick="aumentarAC()">
+                    <i class="fa-solid fa-circle-plus"></i>
+                  </button>
+                  <button id="diminuirAc" onclick="diminuirAC()">
+                    <i class="fa-solid fa-circle-minus"></i>
+                  </button>
+                </div>
+              </div>
+            </div>
+            <p id="acEstado">A/C Desligado</p>
+          </div>
+          <div class="widget-group">
+            <div class="row widget-m clima">
+              <div id="fundo-clima"></div>
+              <div class="info-clima">
+                <div class="cidade-clima">
+                  <span
+                    >São Paulo <i class="fa-solid fa-location-dot"></i
+                  ></span>
+                </div>
+                <div class="temperaturas">
+                  <p id="temperaturaCl">25°</p>
+                  <div class="col-clima">
+                    <div class="temp-max-min">
+                      <span>Máxima: <span id="temp-max">19°</span></span>
+                      <span>Mínima: <span id="temp-min">17°</span></span>
+                    </div>
+                    <div class="condicoesEsperadas">
+                      <span>Condições esperadas:</span>
+                      <span id="cond-esperadas">Sol</span>
+                    </div>
+                  </div>
+                </div>
+                <div class="cond-vento">
+                  <div class="icone-cond">
+                    <div id="icone-clima">
+                      <i class=""></i>
+                    </div>
+                    <span id="condicaoAtual">Ensolarado</span>
+                  </div>
+                  <div class="vento">
+                    <i class="fa-solid fa-wind"></i
+                    ><span id="vel-vento"> 24km/h</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <p>Clima</p>
+          </div>
 
-        <script src="https://code.jquery.com/jquery-3.6.1.min.js"></script>
-        <script src="script.js"></script>
-    </body>
+          <div class="widget-group">
+            <div class="row w-alerta">
+              <div class="alerta">
+                <p><i class="fa-solid fa-triangle-exclamation blink"></i></p>
+                <span><b>PORTA DIANTEIRA DIREITA ABERTA</b></span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-5 popup">
+      <ul>
+        <li><button>Rota para hospital mais próximo</button></li>
+        <li><button>SOS</button></li>
+        <li><button>Rota para posto de abastecimento mais próximo</button></li>
+      </ul>
+    </div>
+
+    <div class="atalho-popup hide"></div>
+
+    <!-- JavaScript Bundle with Popper -->
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-u1OknCvxWvY5kfmNBILK2hRnQC3Pr17a+RTT6rIHI7NnikvbZlHgTPOOmMi466C8"
+      crossorigin="anonymous"
+    ></script>
+
+    <script src="https://code.jquery.com/jquery-3.6.1.min.js"></script>
+    <script src="script.js"></script>
+  </body>
 </html>

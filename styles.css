@@ -4,6 +4,11 @@
     user-select: none;
 }
 
+html, body {
+    min-width: 1280px;
+    min-height: 720px;
+  }
+
 body{
     background-image: url('/assets/imgs/wallpaper2.jpg');
     min-height: 789px;
@@ -14,8 +19,8 @@ body{
     display: none;
 }
 
-.barra-topo{
-    position: absolute
+.config{
+    position: absolute;
 }
 
 #header-box{
@@ -153,7 +158,37 @@ body{
     font-size: 35px;
 }
 
+.widgetAc{
+    background: none;
+}
 
+.acFundo{
+    background: inherit;
+    width: 330px;
+    height: 197px;
+    overflow: hidden;
+    position: absolute;
+    z-index: -1;
+    border-radius: 20px;
+}
+
+.acFundo::after{
+    content: '';
+    background: inherit; 
+    position: absolute;
+    box-shadow: inset 0 0 0 200px rgba(255,255,255,0.05);
+    filter: blur(10px);
+}
+
+.acInfo{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    padding: 0px 10px;
+    z-index: 1;
+    min-width: 330px;
+    height: 197px;
+}
 .red-ac{
     font-size: 40px !important;
     color: red;
@@ -320,4 +355,21 @@ font-size: 15px;
 .config{
     font-size: 35px;
     color: white;
+}
+
+.condicoesEsperadas{
+    display: flex;
+    flex-direction: column;
+    font-size: 14px;
+}
+
+.icone-cond{
+    display: flex;
+    flex-direction: row;
+}
+
+.cond-vento{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
 }

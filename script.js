@@ -92,19 +92,16 @@ function getClima(){$.ajax({
 getClima();
 setInterval(getClima, 300000);
 
-function attClima(result){
-    
+function attClima(result){    
     $('#temperaturaCl').html(result.results.temp + '°');
-    $('#condicoes').html(' ' + result.results.description);
+    $('#condicaoAtual').html(result.results.description);
     $('#temp-max').html(result.results.forecast[0].max + '°');
     $('#temp-min').html(result.results.forecast[0].min + '°');
     $('#cond-esperadas').html(result.results.forecast[0].description);
     $('#vel-vento').html(result.results.wind_speedy);
 
-   
-
     if(result.results.condition_slug == 'rain'){
-        $('#icone-clima').html('<i class="fa-solid fa-cloud-rain"></i>');
+        $('#icone-clima').html('<i class="fa-solid fa-cloud-rain">');
         $('#fundo-clima').css('background-image', 'url("/assets/imgs/rainy.jpg")');
     }
     else if(result.results.condition_slug == 'cloudly_day'){
