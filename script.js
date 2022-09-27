@@ -101,51 +101,63 @@ function attClima(result){
     $('#vel-vento').html(result.results.wind_speedy);
 
     if(result.results.condition_slug == 'rain'){
+        $('#icone-clima > i').remove();
         $('#icone-clima').html('<i class="fa-solid fa-cloud-rain">');
         $('#fundo-clima').css('background-image', 'url("/assets/imgs/rainy.jpg")');
     }
     else if(result.results.condition_slug == 'cloudly_day'){
-        $('#icone-clima > i').html('<i class="fa-solid fa-cloud-sun"></i>');
+        $('#icone-clima > i').remove();
+        $('#icone-clima').html('<i class="fa-solid fa-cloud-sun"></i>');
         $('#fundo-clima').css('background-image', 'url("/assets/imgs/cloudly.jpg")');
     }
     else if(result.results.condition_slug == 'cloudly_night'){
-        $('#icone-clima > i').html('<i class="fa-solid fa-cloud-moon"></i>');
+        $('#icone-clima > i').remove();
+        $('#icone-clima').html('<i class="fa-solid fa-cloud-moon"></i>');
         $('#fundo-clima').css('background-image', 'url("/assets/imgs/cloudly_n.jpg")');
     }
     else if(result.results.condition_slug == 'storm'){
-        $('#icone-clima > i').html('<i class="fa-solid fa-cloud-bolt"></i>');
+        $('#icone-clima > i').remove();
+        $('#icone-clima').html('<i class="fa-solid fa-cloud-bolt"></i>');
         $('#fundo-clima').css('background-image', 'url("/assets/imgs/storm.jpg")');
     }
     else if(result.results.condition_slug == 'clear_day'){
-        $('#icone-clima > i').html('<i class="fa-solid fa-sun"></i>');
+        $('#icone-clima > i').remove();
+        $('#icone-clima').html('<i class="fa-solid fa-sun"></i>');
         $('#fundo-clima').css('background-image', 'url("/assets/imgs/clear.jpg")');
     }
     else if(result.results.condition_slug == 'clear_night'){
-        $('#icone-clima > i').html('<i class="fa-solid fa-moon"></i>');
+        $('#icone-clima > i').remove();
+        $('#icone-clima').html('<i class="fa-solid fa-moon"></i>');
         $('#fundo-clima').css('background-image', 'url("/assets/imgs/clear_n.jpg")');
     }
     else if(result.results.condition_slug == 'fog'){
-        $('#icone-clima > i').html('<i class="fa-solid fa-smog"></i>');
+        $('#icone-clima > i').remove();
+        $('#icone-clima').html('<i class="fa-solid fa-smog"></i>');
         $('#fundo-clima').css('background-image', 'url("/assets/imgs/fog.jpg")');
     }
     else if(result.results.condition_slug == 'snow'){
-        $('#icone-clima > i').html('<i class="fa-solid fa-snowflake"></i>');
+        $('#icone-clima > i').remove();
+        $('#icone-clima').html('<i class="fa-solid fa-snowflake"></i>');
         $('#fundo-clima').css('background-image', 'url("/assets/imgs/snow.jpg")');
     }
     else if(result.results.condition_slug == 'hail'){
-        $('#icone-clima > i').html('<i class="fa-solid fa-cloud-rain"></i>');
+        $('#icone-clima > i').remove();
+        $('#icone-clima').html('<i class="fa-solid fa-cloud-rain"></i>');
         $('#fundo-clima').css('background-image', 'url("/assets/imgs/rainy.jpg")');
     }
     else if(result.results.condition_slug == 'none-day'){
-        $('#icone-clima > i').html('<i class="fa-solid fa-sun"></i>');
+        $('#icone-clima > i').remove();
+        $('#icone-clima').html('<i class="fa-solid fa-sun"></i>');
         $('#fundo-clima').css('background-image', 'url("/assets/imgs/clear.jpg")');
     }
     else if(result.results.condition_slug == 'none-night'){
-        $('#icone-clima > i').html('<i class="fa-solid fa-moon"></i>');
+        $('#icone-clima > i').remove();
+        $('#icone-clima').html('<i class="fa-solid fa-moon"></i>');
         $('#fundo-clima').css('background-image', 'url("/assets/imgs/clear_n.jpg")');
     }
     else{
-        $('#icone-clima > i').html('<i class="fa-solid fa-cloud"></i>');
+        $('#icone-clima > i').remove();
+        $('#icone-clima').html('<i class="fa-solid fa-cloud"></i>');
         $('#fundo-clima').css('background-image', 'url("/assets/imgs/cloudly.jpg")');
     }
 };
