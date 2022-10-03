@@ -315,7 +315,7 @@ button{
     flex-direction: column;
     justify-content: center;
     text-align: center;
-    background-color: red;
+    background-color: rgb(156, 24, 24);
     border-radius: 20px;
     height: 197px;
     min-width: 330px;
@@ -341,7 +341,6 @@ font-size: 15px;
 .w-alerta{
     width: 330px;
     height: 197px;
-    background-color: red;
     border-radius: 20px;
     display: flex;
     flex-direction: row;
